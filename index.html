@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THE SOCIETAL INTEGRATION OF BIONICS</title>
+  <style>
+    :root {
+      --primary-color: #4CAF50;
+      --primary-light: #81C784;
+      --dark-color: #2E3D49;
+      --light-color: #F5F7FA;
+      --gray-color: #607D8B;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+      line-height: 1.6;
+      color: var(--dark-color);
+      background: linear-gradient(135deg, #f5f7fa 0%, #e4f0e1 100%);
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    header {
+      background: linear-gradient(135deg, #ffffff 0%, #f1f8e9 100%);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 20px 0 0;
+      margin-bottom: 30px;
+    }
+    
+    .header-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .title-wrapper {
+      position: relative;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+    
+    .title-container {
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+    
+    .main-title {
+      color: var(--dark-color);
+      font-size: 42px;
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    
+    .bionic-hand {
+      height: 80px;
+      width: auto;
+      position: absolute;
+      left: -100px;
+    }
+    
+    .navbar {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+      border-radius: 0 0 8px 8px;
+      padding: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .navbar li a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      text-transform: uppercase;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+    
+    .navbar li a:hover {
+      background-color: rgba(255,255,255,0.2);
+    }
+    
+    .main-content {
+      background-color: white;
+      border-radius: 8px;
+      padding: 40px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      margin-bottom: 30px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .main-content::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+    }
+    
+    h2 {
+      color: var(--primary-color);
+      margin-top: 0;
+      font-size: 28px;
+    }
+    
+    .intro {
+      font-size: 18px;
+      color: var(--gray-color);
+      margin-bottom: 25px;
+    }
+    
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: var(--gray-color);
+      font-size: 14px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    
+    footer a {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    
+    @media (max-width: 900px) {
+      .bionic-hand {
+        left: -80px;
+        height: 60px;
+      }
+      
+      .main-title {
+        font-size: 32px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .title-wrapper {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .bionic-hand {
+        position: static;
+        margin-bottom: 15px;
+        height: 80px;
+      }
+      
+      .main-title {
+        font-size: 28px;
+      }
+      
+      .navbar {
+        flex-wrap: wrap;
+      }
+      
+      .navbar li a {
+        padding: 8px 12px;
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container header-content">
+      <div class="title-wrapper">
+        <div class="title-container">
+          <img src="https://pngimg.com/d/robotic_arm_PNG5.png" alt="Bionic Hand" class="bionic-hand">
+          <h1 class="main-title">THE SOCIETAL INTEGRATION OF BIONICS</h1>
+        </div>
+      </div>
+      
+      <ul class="navbar">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="misc/topic.html">Technology</a></li>
+        <li><a href="misc/opportunities.html">Opportunities</a></li>
+        <li><a href="misc/risks.html">Risks</a></li>
+        <li><a href="misc/choices.html">Choices</a></li>
+        <li><a href="misc/ethics.html">Ethics</a></li>
+        <li><a href="misc/references.html">References</a></li>
+        <li><a href="misc/process.html">Process</a></li>
+      </ul>
+    </div>
+  </header>
+  
+  <div class="container">
+    <div class="main-content">
+      <h2>Exploring the future of the Societal Intergration of Bionics</h2>
+      <p class="intro">This website examines the profound impact of bionic technology on society, healthcare and human capability enhancement.
+    Bionic integration represents one of the most significant technological advancements of our era,  between human biology and mechanical enhancement. Our research explores both the transformative potential and the societal implications of these developments.
+    The sections above provide a detailed understanding of bionic integration, from technical implementation to ethical considerations.</p>
+    </div>
+    
+    <footer>
+      <p>Research project by Kevin & Brayden</p>
+      <p>Exploring the boundaries of human potential through technology</p>
+    </footer>
+  </div>
+</body>
+</html>

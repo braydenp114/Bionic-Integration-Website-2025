@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BIONIC INTEGRATION IN SOCIETY</title>
+  <style>
+    :root {
+      --primary-color: #4CAF50;
+      --primary-light: #81C784;
+      --dark-color: #2E3D49;
+      --light-color: #F5F7FA;
+      --gray-color: #607D8B;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+      line-height: 1.6;
+      color: var(--dark-color);
+      background: linear-gradient(135deg, #f5f7fa 0%, #e4f0e1 100%);
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    header {
+      background: linear-gradient(135deg, #ffffff 0%, #f1f8e9 100%);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 20px 0 0;
+      margin-bottom: 30px;
+    }
+    
+    .header-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .title-wrapper {
+      position: relative;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+    
+    .title-container {
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+    
+    .main-title {
+      color: var(--dark-color);
+      font-size: 36px;
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    
+    .bionic-hand {
+      height: 60px;
+      width: auto;
+      position: absolute;
+      left: -80px;
+    }
+    
+    .navbar {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+      border-radius: 0 0 8px 8px;
+      padding: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .navbar li a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      text-transform: uppercase;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+    
+    .navbar li a:hover {
+      background-color: rgba(255,255,255,0.2);
+    }
+    
+    .main-content {
+      background-color: white;
+      border-radius: 8px;
+      padding: 40px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      margin-bottom: 30px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .main-content::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+    }
+    
+    h1 {
+      color: var(--primary-color);
+      margin-top: 0;
+      font-size: 28px;
+      text-transform: uppercase;
+    }
+    
+    h2 {
+      color: var(--primary-color);
+      font-size: 22px;
+      margin-top: 25px;
+    }
+    
+    .intro {
+      font-size: 18px;
+      color: var(--gray-color);
+      margin-bottom: 25px;
+    }
+    
+    .opportunity-card {
+      background-color: var(--light-color);
+      border-left: 4px solid var(--primary-color);
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 0 4px 4px 0;
+    }
+    
+    .opportunity-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+    
+    .opportunity-item {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border-top: 3px solid var(--primary-color);
+    }
+    
+    .quote {
+      font-style: italic;
+      border-left: 3px solid var(--primary-color);
+      padding-left: 20px;
+      margin: 30px 0;
+      color: var(--gray-color);
+    }
+    
+    .rhetorical {
+      background-color: rgba(76, 175, 80, 0.1);
+      padding: 25px;
+      border-radius: 8px;
+      margin: 30px 0;
+    }
+    
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: var(--gray-color);
+      font-size: 14px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    
+    footer a {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    
+    @media (max-width: 900px) {
+      .bionic-hand {
+        left: -60px;
+        height: 50px;
+      }
+      
+      .main-title {
+        font-size: 28px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .title-wrapper {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .bionic-hand {
+        position: static;
+        margin-bottom: 15px;
+        height: 60px;
+      }
+      
+      .main-title {
+        font-size: 24px;
+      }
+      
+      .navbar {
+        flex-wrap: wrap;
+      }
+      
+      .navbar li a {
+        padding: 8px 12px;
+        font-size: 12px;
+      }
+      
+      .opportunity-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container header-content">
+      <div class="title-wrapper">
+        <div class="title-container">
+          <img src="https://pngimg.com/d/robotic_arm_PNG5.png" alt="Bionic Hand" class="bionic-hand">
+          <h1 class="main-title">Bionic Integration</h1>
+        </div>
+      </div>
+      
+      <ul class="navbar">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="topic.html">Technology</a></li>
+        <li><a href="opportunities.html">Opportunities</a></li>
+        <li><a href="risks.html">Risks</a></li>
+        <li><a href="choices.html">Choices</a></li>
+        <li><a href="ethics.html">Ethics</a></li>
+        <li><a href="references.html">References</a></li>
+        <li><a href="process.html">Process</a></li>
+      </ul>
+    </div>
+  </header>
+  
+  <div class="container">
+    <div class="main-content">
+      <h1>The Dawn of Human-Machine Integration</h1>
+      <p class="intro">Bionic technology represents one of the most profound intersections of human biology and mechanical engineering, promising to redefine what it means to be human in the 21st century. Bionics emerges from combinations of words of "biology" and "electronics" which links the development of systems and devices that replicate or enhance biological functions using new technology. Bionics started around by developing prosthetic limbs and hearing aids but now it has evolved into a whole new level and started to develop neural interfaces, sensory-enhanced prostheses, and biomechatronics. These new technologies are being adopted in both civilian and military sectors, representing a shift in human-machine integration.
+</p>
+      
+      <div class="rhetorical">
+        <p>What does it mean to be human when our limbs can be replaced with stronger, more precise mechanical versions? How will society change when paralysis becomes reversible through neural interfaces? Can we justify the £40,000 price tag of advanced prosthetics when only a privileged few can afford them? These are the questions we must confront as bionic technology advances at breakneck speed.</p>
+        <p> In our modern society, bionics serves its purpose by being a therapeutic function. helping people regain lost limbs or senses and encouraging social inclusion. New devices like Utah Bionic Leg and Esper Hand uses machine learning to interpret neural input in real time, enabling the user to experience near natural movement and feedback. According to a study by Shaeri et al. (2025), the role of AI-powered neural interfaces in providing smart, adaptable control over prosthetics. On top of this research features in Nature Medicine (2024) suggests that neurally controlled bionic legs can restore biomimetic locomotion in amputees, bringing in quality of life for users. These sort of innovations are also pushing toward sensory restoration such as a 2025 Science study from the University of Chicago shows us that bionic limb users could feel realistic touch sensations through direct brain stimulation (Valle, Greenspan, et al., 2025)
+</p>
+      </div>
+      
+      <h2>Revolutionary Advances in Bionics</h2>
+      
+      <div class="opportunity-grid">
+        <div class="opportunity-item">
+          <h3>Affordable Prosthetics</h3>
+          <p>Companies like Open Bionics are revolutionising prosthetic care by using 3D printing to create customisable limbs. Where traditional prosthetics could cost upwards of £40,000, these innovative solutions now come in under £8,000 making life-changing technology accessible to more amputees.</p>
+        </div>
+        
+        <div class="opportunity-item">
+          <h3>Mind-Controlled Limbs</h3>
+          <p>Groundbreaking neural interfaces now allow amputees to control robotic limbs with their thoughts alone. Clinical trials have demonstrated 90% movement accuracy, with users reporting near-natural sensation, an astonishing achievement from the clunky prosthetics we had just a decade ago.</p>
+        </div>
+        
+        <div class="opportunity-item">
+          <h3>Strength-Enhancing Exoskeletons</h3>
+          <p>From Lockheed Martin's ONYX system aiding soldiers to carry heavy loads, to medical exoskeletons helping stroke survivors regain mobility, these wearable robotic frameworks are finding applications across military and healthcare sectors.</p>
+        </div>
+      </div>
+      
+      <div class="quote">
+        <p>"The development of bionic technology forces us to reconsider 
+          fundamental questions about human identity and equality. It's not just
+           about replacing what's lost but enhancing what remains."</p>
+      </div>
+      
+      <div class="opportunity-card">
+        <h2>The Accessibility Challenge</h2>
+        <p>Despite these remarkable advances the World Health Organisation reports that almost 10% of amputees in developing nations have access to modern prosthetic technology. This inequality raises major ethical questions about how to distribute these
+           life-changing innovations more equitably across the world.</p>
+     <p> On the other hand, the military use of bionics prioritises co-existent with humans. Exoskeletons like Lockheed Martin's ONYX even though it is still under development, these devices are being tested to reduce fatigues, increasing load capacity, and lastly preventing soldiers from injuries. The U.S. Army's interest in these gears indicates the increasing acceptance of human enhancement in the defence sector (Wired, 2024).
+</p>
+      </div>
+      
+      <p>With this information, we can see how bionics can positively impact our society but, at the same time, raise other societal questions. It can get us thinking about how we view ability, human limits, and ethical responsibility in introducing new technology. This web page tackles these questions when bionic integration is pursued for helping people in their everyday lives versus enhancement-driven military goals.
+
+        As we near the start of a bionic revolution, 
+        we must carefully consider what this technology can do and who it should serve.   
+        The choices we make today will reshape humanity and echo through generations to come.</p>
+    </div>
+    
+    <footer>
+      <p>Research project by Kevin & Brayden</p>
+      <p>Exploring the boundaries of human potential through technology</p>
+    </footer>
+  </div>
+</body>
+</html>

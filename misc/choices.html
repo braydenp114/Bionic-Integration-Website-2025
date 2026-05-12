@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHOICES IN BIONIC INTEGRATION</title>
+  <style>
+    :root {
+      --primary-color: #4CAF50;
+      --primary-light: #81C784;
+      --dark-color: #2E3D49;
+      --light-color: #F5F7FA;
+      --gray-color: #607D8B;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+      line-height: 1.6;
+      color: var(--dark-color);
+      background: linear-gradient(135deg, #f5f7fa 0%, #e4f0e1 100%);
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    header {
+      background: linear-gradient(135deg, #ffffff 0%, #f1f8e9 100%);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 20px 0 0;
+      margin-bottom: 30px;
+    }
+    
+    .header-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .title-wrapper {
+      position: relative;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+    
+    .title-container {
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+    
+    .main-title {
+      color: var(--dark-color);
+      font-size: 36px;
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    
+    .bionic-hand {
+      height: 60px;
+      width: auto;
+      position: absolute;
+      left: -80px;
+    }
+    
+    .navbar {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+      border-radius: 0 0 8px 8px;
+      padding: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .navbar li a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      text-transform: uppercase;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+    
+    .navbar li a:hover {
+      background-color: rgba(255,255,255,0.2);
+    }
+    
+    .main-content {
+      background-color: white;
+      border-radius: 8px;
+      padding: 40px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      margin-bottom: 30px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .main-content::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+    }
+    
+    h1 {
+      color: var(--primary-color);
+      margin-top: 0;
+      font-size: 28px;
+      text-transform: uppercase;
+    }
+    
+    h2 {
+      color: var(--primary-color);
+      font-size: 22px;
+      margin-top: 25px;
+    }
+    
+    .intro {
+      font-size: 18px;
+      color: var(--gray-color);
+      margin-bottom: 25px;
+    }
+    
+    .choice-card {
+      background-color: var(--light-color);
+      border-left: 4px solid var(--primary-color);
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 0 4px 4px 0;
+    }
+    
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: var(--gray-color);
+      font-size: 14px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    
+    footer a {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    
+    @media (max-width: 900px) {
+      .bionic-hand {
+        left: -60px;
+        height: 50px;
+      }
+      
+      .main-title {
+        font-size: 28px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .title-wrapper {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .bionic-hand {
+        position: static;
+        margin-bottom: 15px;
+        height: 60px;
+      }
+      
+      .main-title {
+        font-size: 24px;
+      }
+      
+      .navbar {
+        flex-wrap: wrap;
+      }
+      
+      .navbar li a {
+        padding: 8px 12px;
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container header-content">
+      <div class="title-wrapper">
+        <div class="title-container">
+          <img src="https://pngimg.com/d/robotic_arm_PNG5.png" alt="Bionic Hand" class="bionic-hand">
+          <h1 class="main-title">Choices in Bionic Integration</h1>
+        </div>
+      </div>
+      
+      <ul class="navbar">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="topic.html">Technology</a></li>
+        <li><a href="opportunities.html">Opportunities</a></li>
+        <li><a href="risks.html">Risks</a></li>
+        <li><a href="choices.html">Choices</a></li>
+        <li><a href="ethics.html">Ethics</a></li>
+        <li><a href="references.html">References</a></li>
+        <li><a href="process.html">Process</a></li>
+      </ul>
+    </div>
+  </header>
+  
+  <div class="container">
+    <div class="main-content">
+      <h1>Technology Choices in Bionic Integration</h1>
+      <p class="intro">The development of bionic technology presents 
+        society with significant choices that will shape our future 
+        relationship with bionics. With the rapid advancement of bionic
+         technologies in both civilian and military applications has sparked important debates about regulations,
+          accessibility and design. As these innovations transition from experiments into commercially available products, we must make 
+          important decisions to ensure they're developed 
+          and implemented ethically, fairly and safely.
+
+</p>
+      
+      <div class="choice-card">
+        <h2>Prosthetic vs Enhancement</h2>
+        <p> One of the most pressing policy questions revolves around restoration versus enhancement. Should bionics be limited to restoring lost functions
+      or should we embrace enhancement beyond human capabilities? In healthcare bionics have traditionally served restorative purposes
+       like helping individuals regain lost capabilities like 
+       mobility through use of prosthetic limbs. However, the same technologies now offer performance 
+       that exceeds our natural human abilities. 
+       This presents policymakers with a dilemma, should bionics be classified as medical necessities or considered as elective enhancements? 
+       This distinction has significant affects for healthcare coverage,
+        pricing structures and regulations.  (Gavette et al., 2024).
+
+</p>
+      </div>
+      
+      <div class="choice-card">
+        <h2>Neural Interface Approaches</h2>
+        <p>Choices between invasive neural implants versus non-invasive interfaces present trade-offs between functionality and safety.
+           Each approach has different implications for user acceptance and medical risks.</p>
+      </div>
+      
+      <div class="choice-card">
+        <h2>Open vs Proprietary Systems</h2>
+        <p>The decision between open-source bionic platforms and proprietary systems will influence innovation rates,
+           accessibility and user control over their augmentations. Initiatives like 3D-printed prosthetics from charitable 
+           organisations aim to democratise access particularly in developing nations. In contrast, commercial offerings from large medical or 
+           defence corporations often remain locked behind patents and high price tags. This tension between open 
+           and closed systems will significantly influence long-term innovation, sustainability and social equality in bionic technology (Weng, 2025).
+</p>
+      </div>
+      
+      <div class="choice-card">
+        <h2>Concluding</h2>
+        <p>Society must choose between rapid deployment with post-market surveillance versus rigorous pre-market testing, balancing innovation with patient safety. The accelerated development of bionic technologies in civilian and military fields has raised questions about design priorities, accessibility and governance.
+           Once these experiments become available for commercial use, our society must take measures of choices to ensure that they are applied ethically,
+            equitably and safely. To this date the policy dilemma lies in between choosing restoration versus enhancement. For everyday people's healthcare system, bionics are there to serve restoration purposes as stated 
+            on this website multiple times such as regaining mobility through prosthetics. But at the same time there are prosthetics 
+            limbs that are capable of performing beyond a normal person's biological limb. Which makes the policymakers to decide 
+            if they should treat bionics as a medical necessity or an upgrade to a human body.
+
+</p>
+      </div>
+    </div>
+    
+    <footer>
+      <p>Research project by Kevin & Brayden</p>
+      <p>Exploring the boundaries of human potential through technology</p>
+    </footer>
+  </div>
+</body>
+</html>

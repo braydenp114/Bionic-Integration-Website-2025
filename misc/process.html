@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PROCESS SUPPORT - BIONIC INTEGRATION</title>
+  <style>
+    :root {
+      --primary-color: #4CAF50;
+      --primary-light: #81C784;
+      --dark-color: #2E3D49;
+      --light-color: #F5F7FA;
+      --gray-color: #607D8B;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+      line-height: 1.6;
+      color: var(--dark-color);
+      background: linear-gradient(135deg, #f5f7fa 0%, #e4f0e1 100%);
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    header {
+      background: linear-gradient(135deg, #ffffff 0%, #f1f8e9 100%);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 20px 0 0;
+      margin-bottom: 30px;
+    }
+    
+    .header-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .title-wrapper {
+      position: relative;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+    
+    .title-container {
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+    
+    .main-title {
+      color: var(--dark-color);
+      font-size: 36px;
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    
+    .bionic-hand {
+      height: 60px;
+      width: auto;
+      position: absolute;
+      left: -80px;
+    }
+    
+    .navbar {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+      border-radius: 0 0 8px 8px;
+      padding: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .navbar li a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      text-transform: uppercase;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+    
+    .navbar li a:hover {
+      background-color: rgba(255,255,255,0.2);
+    }
+    
+    .main-content {
+      background-color: white;
+      border-radius: 8px;
+      padding: 40px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      margin-bottom: 30px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .main-content::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+    }
+    
+    h1 {
+      color: var(--primary-color);
+      margin-top: 0;
+      font-size: 28px;
+      text-transform: uppercase;
+    }
+    
+    h2 {
+      color: var(--primary-color);
+      font-size: 22px;
+      margin-top: 25px;
+    }
+    
+    .process-list {
+      list-style-type: none;
+      padding: 0;
+    }
+    
+    .process-item {
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .process-item:last-child {
+      border-bottom: none;
+    }
+    
+    .process-link {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    
+    .process-link:hover {
+      text-decoration: underline;
+    }
+    
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: var(--gray-color);
+      font-size: 14px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    
+    footer a {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    
+    @media (max-width: 900px) {
+      .bionic-hand {
+        left: -60px;
+        height: 50px;
+      }
+      
+      .main-title {
+        font-size: 28px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .title-wrapper {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .bionic-hand {
+        position: static;
+        margin-bottom: 15px;
+        height: 60px;
+      }
+      
+      .main-title {
+        font-size: 24px;
+      }
+      
+      .navbar {
+        flex-wrap: wrap;
+      }
+      
+      .navbar li a {
+        padding: 8px 12px;
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container header-content">
+      <div class="title-wrapper">
+        <div class="title-container">
+          <img src="https://pngimg.com/d/robotic_arm_PNG5.png" alt="Bionic Hand" class="bionic-hand">
+          <h1 class="main-title">Project Process Support</h1>
+        </div>
+      </div>
+      
+      <ul class="navbar">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="topic.html">Technology</a></li>
+        <li><a href="opportunities.html">Opportunities</a></li>
+        <li><a href="risks.html">Risks</a></li>
+        <li><a href="choices.html">Choices</a></li>
+        <li><a href="ethics.html">Ethics</a></li>
+        <li><a href="references.html">References</a></li>
+        <li><a href="process.html">Process</a></li>
+      </ul>
+    </div>
+  </header>
+  
+  <div class="container">
+    <div class="main-content">
+      <h1>Project Development Process</h1>
+      <p>This page provides resources and documentation supporting our team's process in developing this research project on bionic integration in society.</p>
+      
+      <h2>Project Stages</h2>
+      <ul class="process-list">
+        <li class="process-item">
+          <h3>Team Formation</h3>
+          <p>Documentation of how our team came together and established roles and responsibilities for the project.</p>
+          <a href="team-formation.html" class="process-link">View Team Formation Details</a>
+        </li>
+        <li class="process-item">
+          <h3>Topic Proposal</h3>
+          <p>Our initial proposal outlining the scope and focus of our research on bionic integration.</p>
+          <a href="proposal.html" class="process-link">View Topic Proposal</a>
+        </li>
+        <li class="process-item">
+          <h3>Research & Development</h3>
+          <p>Records of our research process, including meeting minutes and progress updates.</p>
+          <a href="meetings.html" class="process-link">View Meeting Minutes</a>
+        </li>
+        <li class="process-item">
+          <h3>Evaluation & Reflection</h3>
+          <p>Peer evaluations and reflections on the team process and individual contributions.</p>
+          <a href="evaluation.html" class="process-link">View Peer Evaluations</a>
+        </li>
+        <li class="process-item">
+          <h3>Final Portfolio</h3>
+          <p>The complete collection of our research, analysis, and findings on bionic integration.</p>
+          <a href="portfolio.html" class="process-link">View Project Portfolio</a>
+        </li>
+      </ul>
+      
+      <h2>Assessment Guidelines</h2>
+      <p>To ensure our project meets all requirements, we've aligned our work with the following guidelines and rubrics:</p>
+      <ul class="process-list">
+        <li class="process-item">
+          <a href="rubric.html" class="process-link">Assessment Rubric</a> - Criteria for evaluating project quality
+        </li>
+        <li class="process-item">
+          <a href="guidelines.html" class="process-link">Guideline Conformance</a> - Documentation of how we've met all project requirements
+        </li>
+      </ul>
+      
+      
+    <footer>
+      <p>Research project by Kevin & Brayden</p>
+      <p>Exploring the boundaries of human potential through technology</p>
+    </footer>
+  </div>
+</body>
+</html>

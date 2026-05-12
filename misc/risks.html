@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RISKS OF BIONIC INTEGRATION</title>
+  <style>
+    :root {
+      --primary-color: #4CAF50;
+      --primary-light: #81C784;
+      --dark-color: #2E3D49;
+      --light-color: #F5F7FA;
+      --gray-color: #607D8B;
+      --low-risk: #8BC34A;
+      --medium-risk: #FFC107;
+      --high-risk: #F44336;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+      line-height: 1.6;
+      color: var(--dark-color);
+      background: linear-gradient(135deg, #f5f7fa 0%, #e4f0e1 100%);
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    header {
+      background: linear-gradient(135deg, #ffffff 0%, #f1f8e9 100%);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 20px 0 0;
+      margin-bottom: 30px;
+    }
+    
+    .header-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .title-wrapper {
+      position: relative;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+    
+    .title-container {
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+    
+    .main-title {
+      color: var(--dark-color);
+      font-size: 36px;
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    
+    .bionic-hand {
+      height: 60px;
+      width: auto;
+      position: absolute;
+      left: -80px;
+    }
+    
+    .navbar {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+      border-radius: 0 0 8px 8px;
+      padding: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .navbar li a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      text-transform: uppercase;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+    
+    .navbar li a:hover {
+      background-color: rgba(255,255,255,0.2);
+    }
+    
+    .main-content {
+      background-color: white;
+      border-radius: 8px;
+      padding: 40px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      margin-bottom: 30px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .main-content::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+    }
+    
+    h1 {
+      color: var(--primary-color);
+      margin-top: 0;
+      font-size: 28px;
+      text-transform: uppercase;
+    }
+    
+    h2 {
+      color: var(--primary-color);
+      font-size: 22px;
+      margin-top: 25px;
+    }
+    
+    .intro {
+      font-size: 18px;
+      color: var(--gray-color);
+      margin-bottom: 25px;
+    }
+    
+    .risk-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 30px 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    
+    .risk-table th, .risk-table td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    
+    .risk-table th {
+      background-color: var(--primary-color);
+      color: white;
+      text-transform: uppercase;
+      font-size: 14px;
+    }
+    
+    .risk-table tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    
+    .risk-table tr:hover {
+      background-color: #f1f1f1;
+    }
+    
+    .risk-rating {
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-weight: bold;
+      font-size: 14px;
+      text-align: center;
+      min-width: 80px;
+    }
+    
+    .low-risk {
+      background-color: var(--low-risk);
+      color: white;
+    }
+    
+    .medium-risk {
+      background-color: var(--medium-risk);
+      color: var(--dark-color);
+    }
+    
+    .high-risk {
+      background-color: var(--high-risk);
+      color: white;
+    }
+    
+    .risk-visual {
+      display: flex;
+      align-items: center;
+    }
+    
+    .risk-stars {
+      color: var(--gray-color);
+      margin-left: 10px;
+    }
+    
+    .risk-stars .active {
+      color: var(--primary-color);
+    }
+    
+    .risk-image {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin: 20px 0;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+    
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: var(--gray-color);
+      font-size: 14px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    
+    footer a {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    
+    @media (max-width: 900px) {
+      .bionic-hand {
+        left: -60px;
+        height: 50px;
+      }
+      
+      .main-title {
+        font-size: 28px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .title-wrapper {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .bionic-hand {
+        position: static;
+        margin-bottom: 15px;
+        height: 60px;
+      }
+      
+      .main-title {
+        font-size: 24px;
+      }
+      
+      .navbar {
+        flex-wrap: wrap;
+      }
+      
+      .navbar li a {
+        padding: 8px 12px;
+        font-size: 12px;
+      }
+      
+      .risk-table th, .risk-table td {
+        padding: 10px 8px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container header-content">
+      <div class="title-wrapper">
+        <div class="title-container">
+          <img src="https://pngimg.com/d/robotic_arm_PNG5.png" alt="Bionic Hand" class="bionic-hand">
+          <h1 class="main-title">Bionic Risks</h1>
+        </div>
+      </div>
+      
+      <ul class="navbar">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="topic.html">Technology</a></li>
+        <li><a href="opportunities.html">Opportunities</a></li>
+        <li><a href="risks.html">Risks</a></li>
+        <li><a href="choices.html">Choices</a></li>
+        <li><a href="ethics.html">Ethics</a></li>
+        <li><a href="references.html">References</a></li>
+        <li><a href="process.html">Process</a></li>
+      </ul>
+    </div>
+  </header>
+  
+  <div class="container">
+    <div class="main-content">
+      <h1>Understanding the Risks of Bionic Technology</h1>
+      <p class="intro">While bionic integration offers remarkable benefits, it also introduces significant risks that society must carefully consider and manage.
+Even though the bionic future looks bright with improving lifestyles and enhancing performances, it is not always as simple as it seems. There are already a lot of questions being raised during the development of new innovative bionics such as human rights, personal identity, and societal equity. All of these risks are relevant to both civilian and military settings and must be addressed because they are unethical.
+
+
+      </p>
+      
+      <img src="https://img.freepik.com/premium-vector/cute-cartoon-hacker-cyber-crime-vector-illustration_773815-120.jpg" alt="Cybersecurity risks in bionics" class="risk-image">
+      
+      <h2>Risk Assessment Table</h2>
+      
+      <table class="risk-table">
+        <tr>
+          <th>Risk Category</th>
+          <th>Description</th>
+          <th>Likelihood</th>
+          <th>Impact</th>
+          <th>Risk Rating</th>
+        </tr>
+        <tr>
+          <td>Cybersecurity Vulnerabilities</td>
+          <td>Hacking of neural interfaces or prosthetic control systems could lead to loss of control or privacy breaches</td>
+          <td>
+            <div class="risk-visual">
+              <span class="risk-rating medium-risk">Medium</span>
+              <span class="risk-stars">★★★☆☆</span>
+            </div>
+          </td>
+          <td>
+            <div class="risk-visual">
+              <span class="risk-rating high-risk">High</span>
+              <span class="risk-stars">★★★★★</span>
+            </div>
+          </td>
+          <td>
+            <div class="risk-visual">
+              <span class="risk-rating high-risk">4/5</span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Medical Complications</td>
+          <td>Rejection of implants, nerve damage, or infection from surgical procedures</td>
+          <td>
+            <div class="risk-visual">
+              <span class="risk-rating medium-risk">Medium</span>
+              <span class="risk-stars">★★★☆☆</span>
+            </div>
+          </td>
+          <td>
+            <div class="risk-visual">
+              <span class="risk-rating medium-risk">Medium</span>
+              <span class="risk-stars">★★★☆☆</span>
+            </div>
+          </td>
+          <td>
+            <div class="risk-visual">
+              <span class="risk-rating medium-risk">3/5</span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Social Inequality</td>
+          <td>Widening gap between those who can afford the enhancements and those who cannot</td>
+          <td>
+            <div class="risk-visual">
+              <span class="risk-rating high-risk">High</span>
+              <span class="risk-stars">★★★★★</span>
+            </div>
+          </td>
+          <td>
+            <div class="risk-visual">
+              <span class="risk-rating high-risk">High</span>
+              <span class="risk-stars">★★★★★</span>
+            </div>
+          </td>
+          <td>
+            <div class="risk-visual">
+              <span class="risk-rating high-risk">5/5</span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Psychological Impact</td>
+          <td>Identity issues, dependency or unrealistic expectations from enhancement</td>
+          <td>
+            <div class="risk-visual">
+              <span class="risk-rating medium-risk">Medium</span>
+              <span class="risk-stars">★★★☆☆</span>
+            </div>
+          </td>
+          <td>
+            <div class="risk-visual">
+              <span class="risk-rating medium-risk">Medium</span>
+              <span class="risk-stars">★★★☆☆</span>
+            </div>
+          </td>
+          <td>
+            <div class="risk-visual">
+              <span class="risk-rating medium-risk">3/5</span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Ethical Concerns</td>
+          <td>Military applications, human enhancement boundaries and consent issues</td>
+          <td>
+            <div class="risk-visual">
+              <span class="risk-rating low-risk">Low</span>
+              <span class="risk-stars">★★☆☆☆</span>
+            </div>
+          </td>
+          <td>
+            <div class="risk-visual">
+              <span class="risk-rating high-risk">High</span>
+              <span class="risk-stars">★★★★★</span>
+            </div>
+          </td>
+          <td>
+            <div class="risk-visual">
+              <span class="risk-rating medium-risk">3/5</span>
+            </div>
+          </td>
+        </tr>
+      </table>
+      
+      <h2>Critical Risk Areas</h2>
+      
+      <h3>Cybersecurity Threats</h3>
+      <p>As bionic devices become more connected, they create potential entry points for cyber attacks. A compromised neural interface could allow hackers to hijack limb movements or access sensitive neural data. Recent studies show 23% of medical IoT devices have critical vulnerabilities. That being said, can we rely on government issued prothestics to uphold there resposbilities. 
+        With corruption within politics, can we be sure to trust the data put into the bionics are not being dispatched without our knowledge. </p>
+      
+      <h3>Health and Safety Risks</h3>
+      <p>Surgical procedures for advanced bionic integration carry inherent risks including infection (occurring in <8% of cases) and nerve damage. Long-term effects of neural implants remain poorly understood with some patients reporting chronic pain or unexpected side effects years after implantation. With safety concerns towards the likes of this, how can we expect to supply third-world countires with bionic technogoly given there accessbility to proper equipment and surgons. </p>
+      
+      <h3>Social Implications</h3>
+      <p>The potential for "bionic divides" between enhanced and non-enhanced individuals raises profound social questions. Could we see discrimination against those who choose not to enhance? 
+      The biggest problem for everyday people is that bionic limbs are expensive especially when it's integrated with high-tech things like neural feedback. 
+      Making it so that only those who are rich or have advanced health insurance would be able to have access to these products.
+       As noted in the Bionics Global Market Report 2025, bionics market dispersion reveals the difference in availability between low income and high income regions.
+        This phenomenon can create something like “bio-divide” where there will be a gap between people who couldn't afford the enhancements and people who could. This could lead to discrimination to the people with enhancements.
+</p>Might this technology exacerbate existing inequalities when access remains limited to wealthy nations? These are questions that need to be addressed before the technology is widely adopted for this could ultimately cause more societal issues globally. As the bionic development is accelerating, the work around the social, ethical aspects, and public policy should also be developed to prevent inequitable access, not being able to maintain human agency and society division.
+  </p>
+
+      <h3>Military Concerns</h3>
+      <p> From a military perspective, the most concerning problem is the loss of human autonomy. This is discussed in a study by Hagos and Rawat (2024). Implementation of neuro-symbolic artificial intelligence into military systems could result in a shift in critical decision-making responsibilities from humans to the computer. This would be a problem when we are judging accountability in high-stakes combat scenarios. With brain-machine interfaces implemented could let soldiers control multiple weapons without going through a physical input such as buttons or triggers. If the program acts before soldiers do not have time to assess the full consequences this will alter the soldiers ability to make free choices which would violate long standing military ethics. Furthermore, due to this problem if the military decides to restrict the usage of bionics to certain soldiers or nations it will lead to two levels of soldiers, soldiers with bionics and those without which will raise questions about fairness, pressure to upgrade and affecting military values.
+</p>
+    </div>
+    
+    <footer>
+      <p>Research project by Kevin & Brayden</p>
+      <p>Exploring the boundaries of human potential through technology</p>
+      
+    </footer>
+  </div>
+</body>
+</html>
